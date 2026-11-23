@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Scan all of src explicitly: Storybook's Vite server otherwise only sees
+   files it has already loaded, and classes from new components go missing. */
+@source "../";
+
 /*
  * Design tokens — the single source of values for the site and Storybook.
  * Source: Figma «HW-1» → «Home — First screen (Mocha)», see docs/tokens.md.
@@ -49,6 +53,12 @@
   /* Radius (2) */
   --radius-control: 9999px; /* pill: buttons, fields, skill pills */
   --radius-card: 24px; /* cards, photo */
+
+  /* Pocket — the case cover shape (Figma «Case card» → Pocket) */
+  --radius-sheet: 12px; /* sheet with the mockup */
+  --radius-pocket: 48px; /* top corners of the pocket front */
+  --spacing-sheet-inset: 12%; /* sheet's side inset from the pocket edges */
+  --spacing-pocket-front: 58%; /* pocket front height, share of the cover height */
 
   /* Image ratios (2) */
   --aspect-cover: 2 / 1; /* case cover */

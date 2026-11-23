@@ -25,6 +25,7 @@
 - `line` — лише декор; рамка полів і кнопок без заливки — `ink-muted`.
 - Текст: `text-caption`, `text-body`, `text-lead`, `text-heading`, `text-display`, `text-display-tablet`, `text-nav`, `text-button` (висота рядка, трекінг і жирність задані в `@theme`).
 - Радіуси: `rounded-control` (пігулка), `rounded-card`.
+- Форма кишені (обкладинка кейсу): `rounded-sheet` (аркуш), `rounded-pocket` (верхні кути передньої стінки), `sheet-inset` (бічний відступ аркуша, `inset-x-sheet-inset`), `pocket-front` (висота передньої стінки, `h-pocket-front`).
 - Пропорції: `aspect-cover` (2:1), `aspect-portrait` (5:6).
 - Відступи: кроки 2, 3, 4, 6, 8 у класах (8, 12, 16, 24, 32 px). Секційні відступи 40–120 px поки не оформлені токенами.
 - Шрифт: Inter (латиниця й кирилиця), підключення в [src/app/fonts.ts](src/app/fonts.ts).
@@ -32,7 +33,11 @@
 
 ## Компоненти
 
-Заповнимо далі.
+Лежать у `src/components/<Назва>/`: компонент і поруч одна історія Storybook (`<Назва>.stories.tsx`, Playground з Controls) з повною документацією на сторінці Docs. Перш ніж брати компонент у код, читай його Docs.
+
+- **Button** — [src/components/Button/Button.tsx](src/components/Button/Button.tsx), Storybook `Components/Button`. Варіанти `primary` / `secondary`, розміри `md` / `lg`. Вимкнений стан через `aria-disabled` (лишається у фокусі), пояснення `disabledReason` під кнопкою. Це `<button>`; кнопки-посилання поки немає.
+- **FormField** — [src/components/FormField/FormField.tsx](src/components/FormField/FormField.tsx), Storybook `Components/FormField`. Однорядкове поле з підписом над ним; стани помилки (`error`, `errorMessage`) і `disabled` (атрибут `disabled`). Багаторядкового поля поки немає.
+- **WorkCard** — [src/components/WorkCard/WorkCard.tsx](src/components/WorkCard/WorkCard.tsx), Storybook `Components/WorkCard`. Картка кейсу: обкладинка-«кишеня» з мокапом (`image` з `src/assets`), назва, опис; уся картка — посилання `href`.
 
 ## Правила
 

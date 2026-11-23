@@ -59,6 +59,28 @@ import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/bl
   <div className="rounded-card bg-surface p-8 text-caption">rounded-card</div>
 </div>
 
+## Форма кишені
+
+Токени обкладинки кейсу (компонент WorkCard): задня стінка, аркуш із мокапом і передня стінка.
+
+<div className="sb-unstyled font-sans text-ink grid grid-cols-3 items-start gap-6">
+  <div className="flex flex-col gap-2">
+    <div className="relative aspect-cover overflow-hidden rounded-card bg-line">
+      <div className="absolute inset-x-sheet-inset top-4 bottom-4 rounded-sheet bg-canvas" />
+      <div className="absolute inset-x-0 bottom-0 h-pocket-front rounded-t-pocket rounded-b-card bg-surface" />
+    </div>
+    <div className="text-caption text-ink-muted">кишеня з усіх токенів разом</div>
+  </div>
+  <div className="flex flex-col gap-2">
+    <div className="rounded-sheet bg-surface p-8 text-caption">rounded-sheet — кути аркуша</div>
+    <div className="rounded-t-pocket bg-surface p-8 text-caption">rounded-pocket — верхні кути передньої стінки</div>
+  </div>
+  <div className="flex flex-col gap-2 text-caption text-ink-muted">
+    <div><code>sheet-inset</code> — бічний відступ аркуша від країв кишені (<code>inset-x-sheet-inset</code>)</div>
+    <div><code>pocket-front</code> — висота передньої стінки, частка висоти обкладинки (<code>h-pocket-front</code>)</div>
+  </div>
+</div>
+
 ## Пропорції картинок
 
 <div className="sb-unstyled font-sans text-ink grid grid-cols-3 items-start gap-6">
