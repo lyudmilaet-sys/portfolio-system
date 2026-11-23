@@ -13,9 +13,11 @@ export type FormFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "id"> &
   id?: string;
 };
 
+// outline-ink stays on all the time (invisible without a width), so transition-colors
+// doesn't animate the focus ring colour.
 const inputBase =
-  "w-full rounded-control border-2 px-6 py-3 font-sans text-body transition-colors " +
-  "placeholder:text-ink-muted focus:outline-2 focus:outline-offset-2 focus:outline-ink";
+  "w-full rounded-control border-2 px-6 py-3 font-sans text-body outline-ink transition-colors " +
+  "placeholder:text-ink-muted focus:outline-2 focus:outline-offset-2";
 
 const inputStates = {
   default: "bg-canvas text-ink border-ink-muted hover:border-ink",

@@ -45,9 +45,11 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disable
   ref?: Ref<HTMLButtonElement>;
 };
 
+// outline-ink stays on all the time (invisible without a width), so transition-colors
+// doesn't animate the focus ring colour.
 const base =
-  "inline-flex items-center justify-center rounded-control font-sans transition-colors " +
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
+  "inline-flex items-center justify-center rounded-control font-sans outline-ink transition-colors " +
+  "focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const sizes: Record<ButtonSize, string> = {
   md: "px-6 py-4 text-button",

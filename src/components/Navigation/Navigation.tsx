@@ -30,14 +30,14 @@ export const defaultNavigationItems: NavigationItem[] = [
   { label: "Contacts", href: "#contacts" },
 ];
 
+// outline-ink stays on all the time (invisible without a width), so transition-colors
+// doesn't animate the focus ring colour.
 const linkBase =
-  "rounded-control text-nav transition-colors " +
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink";
+  "rounded-control text-nav outline-ink transition-colors " +
+  "focus-visible:outline-2 focus-visible:outline-offset-4";
 
 const linkState = (active: boolean) =>
-  active
-    ? "text-ink underline decoration-accent decoration-2 underline-offset-8"
-    : "text-ink hover:text-accent hover:underline hover:decoration-2 hover:underline-offset-8";
+  active ? "text-ink link-underline decoration-accent" : "text-ink hover:text-accent hover:link-underline";
 
 /**
  * Навігація сайту: пункти меню.

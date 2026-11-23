@@ -80,3 +80,13 @@
   --spacing-section-96: 96px;
   --spacing-section-120: 120px;
 }
+
+/*
+ * Link underline — one source for menu, language switch and other text links.
+ * Use as `link-underline` (active item) or `hover:link-underline`; colour with `decoration-*`.
+ */
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}

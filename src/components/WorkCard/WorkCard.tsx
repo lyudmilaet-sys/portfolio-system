@@ -40,7 +40,7 @@ export function WorkCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col gap-6 rounded-card focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+      className="group flex flex-col gap-6 rounded-card outline-ink focus-visible:outline-2 focus-visible:outline-offset-4"
     >
       {/* Pocket: back wall → sheet with the mockup → front wall on top. */}
       <div className="relative aspect-cover overflow-hidden rounded-card bg-line">

@@ -112,6 +112,16 @@ import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/bl
 
 Секційні відступи — лише між великими блоками сторінки; всередині компонентів — кроки 2, 3, 4, 6, 8.
 
+## Посилання й фокус
+
+<div className="sb-unstyled font-sans text-ink flex flex-wrap items-center gap-8 text-nav">
+  <span className="link-underline decoration-accent">link-underline</span>
+  <span className="rounded-control outline-2 outline-offset-2 outline-ink px-3">фокус кнопок і полів</span>
+  <span className="rounded-control outline-2 outline-offset-4 outline-ink">фокус посилань і карток</span>
+</div>
+
+\`link-underline\` — утиліта з \`globals.css\`: підкреслення товщиною 2 і з відступом 8, колір задається \`decoration-*\`. Контур фокусу — \`outline-ink\` товщиною 2; відступ 2 для кнопок і полів, 4 для посилань і карток.
+
 ## Відступи
 
 Дозволені кроки: 2, 3, 4, 6, 8 у класах (`p-2`, `gap-4` тощо).

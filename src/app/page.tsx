@@ -32,10 +32,13 @@ const path = ["20 років викладання", "UX/UI", "AI"];
 
 export default function Home() {
   return (
-    <div className="bg-canvas px-4 font-sans text-ink md:px-8 xl:px-section-80">
+    <div id="top" className="bg-canvas px-4 font-sans text-ink md:px-8 xl:px-section-80">
       <div className="mx-auto max-w-content">
         <header className="flex flex-wrap items-center justify-between gap-6 pt-6 xl:pt-section-40">
-          <a href="#top" className="rounded-control text-heading focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          <a
+            href="#top"
+            className="rounded-control text-heading outline-ink transition-colors hover:text-accent hover:link-underline focus-visible:outline-2 focus-visible:outline-offset-4"
+          >
             Liudmyla Khlystun
           </a>
           <div className="flex items-center gap-6 xl:gap-section-96">
@@ -44,7 +47,7 @@ export default function Home() {
           </div>
         </header>
 
-        <main id="top" className="flex flex-col gap-section-48 pt-8 pb-section-64 xl:pt-section-64 xl:pb-section-120">
+        <main className="flex flex-col gap-section-48 pt-8 pb-section-64 xl:pt-section-64 xl:pb-section-120">
           {/* Hero: text on the left, photo with the path caption on the right (photo first on narrow screens). */}
           <section aria-labelledby="hero-title" className="flex flex-col gap-8 lg:flex-row lg:gap-section-96">
             <div className="flex flex-1 flex-col gap-8 lg:justify-between">

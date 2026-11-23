@@ -26,9 +26,11 @@ export const defaultLanguages: Language[] = [
   { code: "de", label: "DE", name: "Deutsch", href: "/de" },
 ];
 
+// outline-ink stays on all the time (invisible without a width), so transition-colors
+// doesn't animate the focus ring colour.
 const linkBase =
-  "rounded-control text-nav transition-colors " +
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink";
+  "rounded-control text-nav outline-ink transition-colors " +
+  "focus-visible:outline-2 focus-visible:outline-offset-4";
 
 /**
  * Перемикач мов сайту: EN / DE.
@@ -55,7 +57,7 @@ export function LanguageSwitch({ languages = defaultLanguages, current, ariaLabe
                   lang={language.code}
                   aria-current={active ? "true" : undefined}
                   className={`${linkBase} ${
-                    active ? "text-ink" : "text-ink-muted hover:text-accent hover:underline hover:decoration-2 hover:underline-offset-8"
+                    active ? "text-ink" : "text-ink-muted hover:text-accent hover:link-underline"
                   }`}
                 >
                   {language.label}
