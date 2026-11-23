@@ -42,3 +42,9 @@ next-env.d.ts
 
 .vercel
 .env*
+
+*storybook.log
+storybook-static
+
+# Storybook build output (generated)
+public/storybook

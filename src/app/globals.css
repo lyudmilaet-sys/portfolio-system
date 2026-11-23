@@ -1,3 +1,58 @@
 @import "tailwindcss";
 
-/* Design tokens (Mocha palette, type, spacing, radius) will live here — see docs/plan.md, section 4. */
+/*
+ * Design tokens — the single source of values for the site and Storybook.
+ * Source: Figma «HW-1» → «Home — First screen (Mocha)», see docs/tokens.md.
+ * Default Tailwind colours and text sizes are reset, so only system classes
+ * work (text-white, bg-black, text-sm … silently do nothing).
+ */
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Colours (7) */
+  --color-*: initial;
+  --color-canvas: #f6f1ec; /* page background; sheet in the pocket; text on accent */
+  --color-surface: #e8dcd2; /* pocket front, photo backdrop, hover of outline button */
+  --color-line: #d9c6b8; /* decoration only: dividers, card borders, pocket back */
+  --color-accent: #7a5543; /* primary button, links, arrows */
+  --color-ink: #2b211c; /* main text */
+  --color-ink-muted: #6b5a50; /* secondary text; border of outline buttons and fields */
+  --color-danger: #a8174b; /* form errors: text and field border */
+
+  /* Text (8) */
+  --text-*: initial;
+  --text-caption: 14px;
+  --text-caption--line-height: 1.5;
+  --text-body: 18px;
+  --text-body--line-height: 1.5;
+  --text-lead: 20px;
+  --text-lead--line-height: 1.5;
+  --text-heading: 32px;
+  --text-heading--line-height: 1.2;
+  --text-heading--font-weight: 500;
+  --text-display: 56px;
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.01em;
+  --text-display--font-weight: 600;
+  --text-display-tablet: 44px;
+  --text-display-tablet--line-height: 1.15;
+  --text-display-tablet--letter-spacing: -0.01em;
+  --text-display-tablet--font-weight: 600;
+  --text-nav: 24px;
+  --text-nav--line-height: 1.2;
+  --text-nav--font-weight: 500;
+  --text-button: 16px;
+  --text-button--line-height: 1;
+  --text-button--font-weight: 500;
+
+  /* Radius (2) */
+  --radius-control: 9999px; /* pill: buttons, fields, skill pills */
+  --radius-card: 24px; /* cards, photo */
+
+  /* Image ratios (2) */
+  --aspect-cover: 2 / 1; /* case cover */
+  --aspect-portrait: 5 / 6; /* photo */
+
+  /* Spacing: Tailwind's 4px step stays; allowed steps are 2, 3, 4, 6, 8 (8, 12, 16, 24, 32 px). */
+}
