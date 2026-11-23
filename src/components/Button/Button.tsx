@@ -1,6 +1,14 @@
 "use client";
 
-import { useId, type ButtonHTMLAttributes, type MouseEvent, type ReactNode, type Ref } from "react";
+import Link from "next/link";
+import {
+  useId,
+  type AnchorHTMLAttributes,
+  type ButtonHTMLAttributes,
+  type MouseEvent,
+  type ReactNode,
+  type Ref,
+} from "react";
 
 export type ButtonVariant = "primary" | "secondary";
 export type ButtonSize = "md" | "lg";
@@ -13,8 +21,19 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disable
   /** `md` — звичайна (текст `text-button`); `lg` — велика (текст `text-lead`). */
   size?: ButtonSize;
   /**
+   * Адреса, куди веде кнопка. З нею кнопка стає посиланням (`<a>`) з тим самим виглядом:
+   * для переходу на сторінку, до розділу (`#works`) чи на файл. Без неї — `<button>` для дії на місці.
+   */
+  href?: string;
+  /**
+   * Лише разом із `href`: завантажити файл замість відкрити його (атрибут `download`).
+   * `true` — з назвою файлу з адреси; рядок — з цією назвою.
+   */
+  download?: boolean | string;
+  /**
    * Вимикає кнопку. Кнопка лишається у фокусі й читається скрінрідером:
    * ставиться `aria-disabled="true"`, а не атрибут `disabled`; натискання ігнорується.
+   * Вимкнена кнопка завжди `<button>`, навіть якщо передано `href`.
    */
   disabled?: boolean;
   /**
@@ -22,7 +41,7 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disable
    * і зв'язане з нею через `aria-describedby`.
    */
   disabledReason?: string;
-  /** Посилання на сам `<button>`, наприклад щоб повернути на нього фокус. */
+  /** Посилання на сам елемент (`<button>` або `<a>`), наприклад щоб повернути на нього фокус. */
   ref?: Ref<HTMLButtonElement>;
 };
 
@@ -50,23 +69,51 @@ const disabledVariants: Record<ButtonVariant, string> = {
 /**
  * Кнопка дизайн-системи: одна дія на сайті-портфоліо.
  * Два варіанти (`primary`, `secondary`), два розміри (`md`, `lg`), кути `rounded-control`.
- * Вимкнений стан — через `aria-disabled`, з поясненням під кнопкою.
+ * З `href` — посилання з виглядом кнопки. Вимкнений стан — через `aria-disabled`, з поясненням під кнопкою.
  */
 export function Button({
   children,
   variant = "primary",
   size = "md",
+  href,
+  download,
   disabled = false,
   disabledReason,
   type = "button",
   className,
   onClick,
+  ref,
   "aria-describedby": describedBy,
   ...rest
 }: ButtonProps) {
   const reasonId = useId();
   const showReason = disabled && Boolean(disabledReason);
   const describedByIds = [describedBy, showReason ? reasonId : undefined].filter(Boolean).join(" ") || undefined;
+
+  const classes = [base, sizes[size], disabled ? disabledVariants[variant] : variants[variant], className]
+    .filter(Boolean)
+    .join(" ");
+
+  // Link mode: same look, but an <a>. A download or a file goes through a plain <a>,
+  // pages and sections through next/link.
+  if (href && !disabled) {
+    const anchorProps = {
+      ...(rest as AnchorHTMLAttributes<HTMLAnchorElement>),
+      className: classes,
+      "aria-describedby": describedByIds,
+      onClick: onClick as unknown as AnchorHTMLAttributes<HTMLAnchorElement>["onClick"],
+      ref: ref as unknown as Ref<HTMLAnchorElement>,
+    };
+    return download ? (
+      <a {...anchorProps} href={href} download={download}>
+        {children}
+      </a>
+    ) : (
+      <Link {...anchorProps} href={href}>
+        {children}
+      </Link>
+    );
+  }
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled) {
@@ -77,13 +124,10 @@ export function Button({
     onClick?.(event);
   };
 
-  const classes = [base, sizes[size], disabled ? disabledVariants[variant] : variants[variant], className]
-    .filter(Boolean)
-    .join(" ");
-
   const button = (
     <button
       {...rest}
+      ref={ref}
       type={type}
       className={classes}
       aria-disabled={disabled || undefined}
