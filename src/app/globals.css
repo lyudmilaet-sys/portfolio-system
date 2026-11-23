@@ -65,4 +65,18 @@
   --aspect-portrait: 5 / 6; /* photo */
 
   /* Spacing: Tailwind's 4px step stays; allowed steps are 2, 3, 4, 6, 8 (8, 12, 16, 24, 32 px). */
+
+  /* Layout — widths (Figma «Home — First screen»): max-w-*, w-* */
+  --container-content: 1280px; /* page content width */
+  --container-headline: 660px; /* hero headline column */
+  --container-lead: 640px; /* hero lead text */
+  --container-photo: 320px; /* hero photo */
+
+  /* Layout — section spacing between large blocks (Figma section/*): pt-section-64, gap-section-96 … */
+  --spacing-section-40: 40px;
+  --spacing-section-48: 48px;
+  --spacing-section-64: 64px;
+  --spacing-section-80: 80px;
+  --spacing-section-96: 96px;
+  --spacing-section-120: 120px;
 }

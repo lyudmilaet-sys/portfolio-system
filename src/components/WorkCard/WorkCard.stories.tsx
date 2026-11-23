@@ -14,7 +14,7 @@ const description = `
 | \`title\` | текст | — (обов'язковий) | назва роботи; це й текст посилання |
 | \`description\` | текст | — (обов'язковий) | короткий опис: тип продукту · період |
 | \`href\` | текст | — (обов'язковий) | адреса сторінки кейсу |
-| \`image\` | імпортована картинка | — (обов'язковий) | мокап кейсу з \`src/assets\` на аркуші в кишені; видно верхню частину |
+| \`image\` | імпортована картинка | — | мокап кейсу з \`src/assets\` на аркуші в кишені; видно верхню частину. Без нього аркуш порожній (\`canvas\`), як у макеті |
 | \`imageAlt\` | текст | \`""\` | опис мокапу; порожній — обкладинка декоративна |
 | \`sizes\` | текст | \`(min-width: 1024px) 33vw, 100vw\` | яку ширину займає картка, щоб браузер обрав розмір картинки |
 
@@ -68,14 +68,19 @@ const meta = {
     description: { control: "text" },
     href: { control: "text" },
     imageAlt: { control: "text" },
-    image: { control: false },
+    image: {
+      description: "Мокап на аркуші; без нього аркуш порожній",
+      control: { type: "select", labels: { mockup: "мокап-приклад", none: "без картинки" } },
+      options: ["mockup", "none"],
+      mapping: { mockup: cover, none: undefined },
+    },
     sizes: { control: false },
   },
   args: {
     title: "Old Lion | Book Mobile App",
     description: "Мобільний e-commerce застосунок · Жовтень – листопад 2026",
     href: "/works/old-lion",
-    image: cover,
+    image: "mockup" as unknown as typeof cover,
     imageAlt: "",
   },
   // A three-column grid like on the home page, so the card has its real width.

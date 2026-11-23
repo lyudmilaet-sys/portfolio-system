@@ -88,6 +88,30 @@ import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/bl
   <div className="flex flex-col gap-2"><div className="aspect-portrait rounded-card bg-surface" /><div className="text-caption text-ink-muted">aspect-portrait — фото</div></div>
 </div>
 
+## Розкладка
+
+Ширини (класи \`max-w-*\` і \`w-*\`):
+
+<div className="sb-unstyled font-sans text-ink flex flex-col gap-3">
+  <div className="flex flex-col gap-2"><div className="max-w-photo h-4 rounded-control bg-accent" /><div className="text-caption text-ink-muted">photo — фото на першому екрані</div></div>
+  <div className="flex flex-col gap-2"><div className="max-w-lead h-4 rounded-control bg-accent" /><div className="text-caption text-ink-muted">lead — лід-текст</div></div>
+  <div className="flex flex-col gap-2"><div className="max-w-headline h-4 rounded-control bg-accent" /><div className="text-caption text-ink-muted">headline — головний заголовок</div></div>
+  <div className="text-caption text-ink-muted">content — ширина контенту сторінки (ширша за цю колонку документації)</div>
+</div>
+
+Секційні відступи між великими блоками (класи \`pt-section-64\`, \`gap-section-96\` тощо):
+
+<div className={"sb-unstyled font-sans text-ink flex flex-wrap items-end gap-8"}>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-40 bg-accent" /><div className="text-caption text-ink-muted">section-40</div></div>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-48 bg-accent" /><div className="text-caption text-ink-muted">section-48</div></div>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-64 bg-accent" /><div className="text-caption text-ink-muted">section-64</div></div>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-80 bg-accent" /><div className="text-caption text-ink-muted">section-80</div></div>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-96 bg-accent" /><div className="text-caption text-ink-muted">section-96</div></div>
+  <div className="flex flex-col items-center gap-2"><div className="w-4 h-section-120 bg-accent" /><div className="text-caption text-ink-muted">section-120</div></div>
+</div>
+
+Секційні відступи — лише між великими блоками сторінки; всередині компонентів — кроки 2, 3, 4, 6, 8.
+
 ## Відступи
 
 Дозволені кроки: 2, 3, 4, 6, 8 у класах (`p-2`, `gap-4` тощо).

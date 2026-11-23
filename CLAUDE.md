@@ -27,7 +27,8 @@
 - Радіуси: `rounded-control` (пігулка), `rounded-card`.
 - Форма кишені (обкладинка кейсу): `rounded-sheet` (аркуш), `rounded-pocket` (верхні кути передньої стінки), `sheet-inset` (бічний відступ аркуша, `inset-x-sheet-inset`), `pocket-front` (висота передньої стінки, `h-pocket-front`).
 - Пропорції: `aspect-cover` (2:1), `aspect-portrait` (5:6).
-- Відступи: кроки 2, 3, 4, 6, 8 у класах (8, 12, 16, 24, 32 px). Секційні відступи 40–120 px поки не оформлені токенами.
+- Відступи: кроки 2, 3, 4, 6, 8 у класах (8, 12, 16, 24, 32 px) — всередині компонентів.
+- Розкладка сторінки: ширини `max-w-content` (контент), `max-w-headline`, `max-w-lead`, `w-photo` / `max-w-photo`; секційні відступи між великими блоками `section-40`, `section-48`, `section-64`, `section-80`, `section-96`, `section-120` (`pt-section-64`, `gap-section-96`, `px-section-80` …).
 - Шрифт: Inter (латиниця й кирилиця), підключення в [src/app/fonts.ts](src/app/fonts.ts).
 - Без hex, rgb і значень у квадратних дужках у компонентах та історіях.
 

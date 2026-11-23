@@ -11,8 +11,9 @@ export type WorkCardProps = {
   /**
    * Мокап кейсу, що лежить на аркуші в «кишені»: картинка, імпортована з `src/assets`
    * (`import cover from "@/assets/…"`). Показується верхня частина, обрізана по ширині аркуша.
+   * Без картинки аркуш порожній (`canvas`), як у макеті, поки мокапу ще немає.
    */
-  image: StaticImageData;
+  image?: StaticImageData;
   /**
    * Опис обкладинки для скрінрідера. За замовчуванням порожній: назва вже стоїть під картинкою,
    * тож обкладинку вважаємо декоративною. Заповнюйте, лише якщо на ній є важлива інформація.
@@ -44,7 +45,7 @@ export function WorkCard({
       {/* Pocket: back wall → sheet with the mockup → front wall on top. */}
       <div className="relative aspect-cover overflow-hidden rounded-card bg-line">
         <div className="absolute inset-x-sheet-inset top-4 bottom-4 overflow-hidden rounded-sheet bg-canvas transition-transform motion-safe:group-hover:-translate-y-3 motion-safe:group-focus-visible:-translate-y-3">
-          <Image src={image} alt={imageAlt} fill sizes={sizes} className="object-cover object-top" />
+          {image && <Image src={image} alt={imageAlt} fill sizes={sizes} className="object-cover object-top" />}
         </div>
         <div className="absolute inset-x-0 bottom-0 h-pocket-front rounded-t-pocket rounded-b-card bg-surface" />
       </div>
