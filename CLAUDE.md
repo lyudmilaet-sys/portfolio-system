@@ -37,6 +37,7 @@
 
 - **Button** — [src/components/Button/Button.tsx](src/components/Button/Button.tsx), Storybook `Components/Button`. Варіанти `primary` / `secondary`, розміри `md` / `lg`. Вимкнений стан через `aria-disabled` (лишається у фокусі), пояснення `disabledReason` під кнопкою. Це `<button>`; кнопки-посилання поки немає.
 - **FormField** — [src/components/FormField/FormField.tsx](src/components/FormField/FormField.tsx), Storybook `Components/FormField`. Однорядкове поле з підписом над ним; стани помилки (`error`, `errorMessage`) і `disabled` (атрибут `disabled`). Багаторядкового поля поки немає.
+- **Navigation** — [src/components/Navigation/Navigation.tsx](src/components/Navigation/Navigation.tsx), Storybook `Components/Navigation`. Пункти меню (`items`, за замовчуванням About / Works / Contacts), активний — `activeHref` (`aria-current="page"`). Від `md` — рядок посилань; на вузькому екрані — кнопка Menu (Button secondary) і панель поверх контенту, Escape закриває. Перемикач мов EN / DE — окремий елемент, його поки немає.
 - **WorkCard** — [src/components/WorkCard/WorkCard.tsx](src/components/WorkCard/WorkCard.tsx), Storybook `Components/WorkCard`. Картка кейсу: обкладинка-«кишеня» з мокапом (`image` з `src/assets`), назва, опис; уся картка — посилання `href`.
 
 ## Правила

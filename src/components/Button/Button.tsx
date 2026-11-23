@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, type ButtonHTMLAttributes, type MouseEvent, type ReactNode } from "react";
+import { useId, type ButtonHTMLAttributes, type MouseEvent, type ReactNode, type Ref } from "react";
 
 export type ButtonVariant = "primary" | "secondary";
 export type ButtonSize = "md" | "lg";
@@ -22,6 +22,8 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disable
    * і зв'язане з нею через `aria-describedby`.
    */
   disabledReason?: string;
+  /** Посилання на сам `<button>`, наприклад щоб повернути на нього фокус. */
+  ref?: Ref<HTMLButtonElement>;
 };
 
 const base =
