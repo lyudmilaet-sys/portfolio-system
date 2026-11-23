@@ -32,3 +32,4 @@
 ## Посилання
 
 - План сайту: [docs/plan.md](docs/plan.md)
+- Чернетка токенів з макета першого екрана: [docs/tokens.md](docs/tokens.md)
