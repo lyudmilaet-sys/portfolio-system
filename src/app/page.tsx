@@ -1,4 +1,7 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import coverFluentia from "@/assets/cover-fluentia.png";
+import coverHealthMate from "@/assets/cover-healthmate.png";
+import coverOldLion from "@/assets/cover-old-lion.png";
 import portrait from "@/assets/portrait.png";
 import { Button } from "@/components/Button/Button";
 import { LanguageSwitch } from "@/components/LanguageSwitch/LanguageSwitch";
@@ -19,13 +22,15 @@ const languages = [
 ];
 
 // Order and texts: docs/plan.md, block 5. Case pages don't exist yet, so cards point to #cases.
-const cases = [
+// Covers from the case files in Figma (src/assets/cover-*.png).
+const cases: { title: string; description: string; image: StaticImageData }[] = [
   {
     title: "Old Lion | Book Mobile App",
     description: "Мобільний e-commerce застосунок · Видавництво Старого Лева · Жовтень – листопад 2026",
+    image: coverOldLion,
   },
-  { title: "Fluentia", description: "Застосунок для вивчення мов · Серпень 2026" },
-  { title: "HealthMate", description: "Веб-сервіс для здоров’я · Липень 2026" },
+  { title: "Fluentia", description: "Застосунок для вивчення мов · Серпень 2026", image: coverFluentia },
+  { title: "HealthMate", description: "Веб-сервіс для здоров’я · Липень 2026", image: coverHealthMate },
 ];
 
 const path = ["20 років викладання", "UX/UI", "AI"];
@@ -109,6 +114,7 @@ export default function Home() {
                     title={item.title}
                     description={item.description}
                     href="#cases"
+                    image={item.image}
                     sizes="(min-width: 1024px) 405px, (min-width: 768px) 50vw, 100vw"
                   />
                 </li>
