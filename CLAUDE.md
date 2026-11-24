@@ -8,7 +8,7 @@
 
 - Next.js (App Router), TypeScript, Tailwind CSS v4, Storybook 10 (`@storybook/nextjs-vite`, аддони docs і a11y).
 - Публікація: Vercel, проєкт `portfolio-system`, підключений до GitHub-репозиторію `lyudmilaet-sys/portfolio-system`.
-- Скрипти: `npm run dev` (сайт, localhost:3000), `npm run build`, `npm run lint`, `npm run storybook` (localhost:6006), `npm run build-storybook` (у `public/storybook`).
+- Скрипти: `npm run dev` (сайт, localhost:3000), `npm run build` (спершу Storybook у `public/storybook`, потім сайт), `npm run lint`, `npm run storybook` (localhost:6006), `npm run build-storybook`. Storybook публікується разом із сайтом за адресою `/storybook` (редирект на `/storybook/index.html` у `next.config.ts`).
 - Токени — блок `@theme` у [src/app/globals.css](src/app/globals.css); це єдине джерело значень. Стандартні кольори (`--color-*`) і розміри тексту (`--text-*`) Tailwind скинуто.
 - Шрифт — Inter (латиниця й кирилиця) у [src/app/fonts.ts](src/app/fonts.ts), насиченості `font-normal` (400), `font-medium` (500), `font-semibold` (600). Клас `font-sans`.
 
@@ -91,5 +91,5 @@
 
 - План сайту: [docs/plan.md](docs/plan.md)
 - Чернетка токенів з макета першого екрана: [docs/tokens.md](docs/tokens.md)
-- Storybook: `npm run storybook` → http://localhost:6006 (на сайті поки не опублікований)
+- Storybook: https://portfolio-system-psi.vercel.app/storybook (локально — `npm run storybook` → http://localhost:6006)
 - Живий сайт: https://portfolio-system-psi.vercel.app
