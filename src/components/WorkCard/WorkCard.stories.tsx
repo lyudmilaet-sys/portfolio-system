@@ -48,7 +48,7 @@ import oldLionCover from "@/assets/old-lion-cover.png";
 
 <WorkCard
   title="Old Lion: One App for Every Book"
-  description="Mobile app · GoIT internship for Old Lion Publishing House · Oct–Nov 2026"
+  description="Mobile app · IT School Go IT internship for Old Lion Publishing House · Sep–Nov 2026"
   href="/works/old-lion"
   image={oldLionCover}
 />
@@ -78,7 +78,7 @@ const meta = {
   },
   args: {
     title: "Old Lion: One App for Every Book",
-    description: "Mobile app · GoIT internship for Old Lion Publishing House · Oct–Nov 2026",
+    description: "Mobile app · IT School Go IT internship for Old Lion Publishing House · Sep–Nov 2026",
     href: "/works/old-lion",
     image: "mockup" as unknown as typeof cover,
     imageAlt: "",

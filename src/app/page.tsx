@@ -28,14 +28,14 @@ const cases: { title: string; description: string; image: StaticImageData }[] = 
   {
     title: "Old Lion: One App for Every Book",
     // Word joiners and no-break spaces (here and below) keep the period on one line when the text wraps.
-    description: "Mobile app · GoIT internship for Old Lion Publishing House · Oct⁠–⁠Nov 2026",
+    description: "Mobile app · IT School Go IT internship for Old Lion Publishing House · Sep⁠–⁠Nov 2026",
     image: coverOldLion,
   },
-  { title: "Fluentia: Learn by Live Practice", description: "Mobile app · GoIT course project · Aug⁠–⁠Sep 2026", image: coverFluentia },
-  { title: "HealthMate: Simple Health Tracking", description: "Web service · GoIT course project · Jun⁠–⁠Jul 2026", image: coverHealthMate },
+  { title: "Fluentia: Learn by Live Practice", description: "Mobile app · IT School Go IT course project · Aug⁠–⁠Sep 2026", image: coverFluentia },
+  { title: "HealthMate: Simple Health Tracking", description: "Web service · IT School Go IT course project · Jun⁠–⁠Jul 2026", image: coverHealthMate },
   {
     title: "Hotel Nostalgia: A Clearer, Warmer Website",
-    description: "Website redesign · GoIT course project · May 2026",
+    description: "Website redesign · IT School Go IT course project · May 2026",
     image: coverHotelNostalgia,
   },
 ];
