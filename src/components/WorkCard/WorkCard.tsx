@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
 export type WorkCardProps = {
-  /** Назва роботи, наприклад «Old Lion | Book Mobile App». Це й текст посилання. */
+  /** Назва роботи, наприклад «Old Lion: One App for Every Book». Це й текст посилання. */
   title: string;
   /** Короткий опис одним рядком: тип продукту · період. */
   description: string;

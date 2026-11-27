@@ -44,10 +44,10 @@ const description = `
 \`accent\`, \`canvas\`, \`ink\`, \`ink-muted\`, \`surface\`, \`rounded-control\`, \`text-button\`, \`text-lead\`, \`text-caption\`, \`font-sans\`; відступи кроками 2, 3, 4, 6, 8.
 
 ### Коли використовувати
-- **primary** — одна головна дія в блоці («Подивитись кейси», «Написати мені»). Не більше однієї primary поруч.
-- **secondary** — другорядна дія поруч із головною («Завантажити CV»).
+- **primary** — одна головна дія в блоці («View case studies», «Contact me»). Не більше однієї primary поруч.
+- **secondary** — другорядна дія поруч із головною («Download CV»).
 - **lg** — фінальний заклик унизу сторінки, де кнопка стоїть сама.
-- **з \`href\`** — коли кнопка кудись веде: «Подивитись кейси» (\`href="#works"\`), «Завантажити CV» (\`href="/cv.pdf" download\`).
+- **з \`href\`** — коли кнопка кудись веде: «View case studies» (\`href="#works"\`), «Download CV» (\`href="/cv.pdf" download\`).
 
 ### Коли не використовувати
 - Без \`href\` для переходу кудись: перехід — це завжди посилання, додайте \`href\`.
@@ -59,11 +59,11 @@ const description = `
 \`\`\`tsx
 import { Button } from "@/components/Button/Button";
 
-<Button href="#works">Подивитись кейси</Button>
-<Button variant="secondary" href="/cv.pdf" download>Завантажити CV</Button>
-<Button onClick={sendForm} type="submit">Надіслати</Button>
-<Button size="lg" disabled disabledReason="CV з'явиться найближчим часом">
-  Завантажити CV
+<Button href="#works">View case studies</Button>
+<Button variant="secondary" href="/cv.pdf" download>Download CV</Button>
+<Button onClick={sendForm} type="submit">Send</Button>
+<Button size="lg" disabled disabledReason="CV coming soon">
+  Download CV
 </Button>
 \`\`\`
 `;
@@ -85,11 +85,11 @@ const meta = {
     download: { control: "boolean" },
   },
   args: {
-    children: "Подивитись кейси",
+    children: "View case studies",
     variant: "primary",
     size: "md",
     disabled: false,
-    disabledReason: "CV з'явиться найближчим часом",
+    disabledReason: "CV coming soon",
     href: "",
     download: false,
   },

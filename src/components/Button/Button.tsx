@@ -14,7 +14,7 @@ export type ButtonVariant = "primary" | "secondary";
 export type ButtonSize = "md" | "lg";
 
 export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled"> & {
-  /** Текст кнопки. Коротка дія дієсловом: «Подивитись кейси», «Завантажити CV». */
+  /** Текст кнопки. Коротка дія дієсловом: «View case studies», «Download CV». */
   children: ReactNode;
   /** `primary` — головна дія (заливка `accent`); `secondary` — другорядна (без заливки, межа `ink-muted`). */
   variant?: ButtonVariant;

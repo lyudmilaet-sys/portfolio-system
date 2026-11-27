@@ -47,8 +47,8 @@ import { WorkCard } from "@/components/WorkCard/WorkCard";
 import oldLionCover from "@/assets/old-lion-cover.png";
 
 <WorkCard
-  title="Old Lion | Book Mobile App"
-  description="Мобільний e-commerce застосунок · Жовтень – листопад 2026"
+  title="Old Lion: One App for Every Book"
+  description="Mobile app · GoIT internship for Old Lion Publishing House · Oct–Nov 2026"
   href="/works/old-lion"
   image={oldLionCover}
 />
@@ -77,8 +77,8 @@ const meta = {
     sizes: { control: false },
   },
   args: {
-    title: "Old Lion | Book Mobile App",
-    description: "Мобільний e-commerce застосунок · Жовтень – листопад 2026",
+    title: "Old Lion: One App for Every Book",
+    description: "Mobile app · GoIT internship for Old Lion Publishing House · Oct–Nov 2026",
     href: "/works/old-lion",
     image: "mockup" as unknown as typeof cover,
     imageAlt: "",

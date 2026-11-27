@@ -12,7 +12,7 @@ import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/bl
   <ColorItem title="canvas" subtitle="фон сторінки; аркуш у кишені; текст на акцентній кнопці" colors={{ canvas: "var(--color-canvas)" }} />
   <ColorItem title="surface" subtitle="передня стінка кишені, фон фото, наведення на кнопку без заливки" colors={{ surface: "var(--color-surface)" }} />
   <ColorItem title="line" subtitle="лише декор: розділювачі, рамки карток, задня стінка кишені; не для тексту й не для рамок полів" colors={{ line: "var(--color-line)" }} />
-  <ColorItem title="accent" subtitle="головна кнопка, посилання, стрілки" colors={{ accent: "var(--color-accent)" }} />
+  <ColorItem title="accent" subtitle="головна кнопка, посилання, стрілки, виділене слово в заголовку" colors={{ accent: "var(--color-accent)" }} />
   <ColorItem title="ink" subtitle="основний текст" colors={{ ink: "var(--color-ink)" }} />
   <ColorItem title="ink-muted" subtitle="другорядний текст; рамка кнопок і полів без заливки" colors={{ "ink-muted": "var(--color-ink-muted)" }} />
   <ColorItem title="danger" subtitle="помилки у формах: текст і межа поля" colors={{ danger: "var(--color-danger)" }} />
@@ -42,14 +42,14 @@ import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/bl
 ### Стилі тексту з висотою рядка, трекінгом і жирністю
 
 <div className="sb-unstyled font-sans text-ink bg-canvas rounded-card p-8 flex flex-col gap-6">
-  <div><div className="text-caption text-ink-muted">text-display</div><div className="text-display">Роблю складне зрозумілим</div></div>
-  <div><div className="text-caption text-ink-muted">text-display-tablet</div><div className="text-display-tablet">Роблю складне зрозумілим</div></div>
+  <div><div className="text-caption text-ink-muted">text-display</div><div className="text-display">I make complex things clear</div></div>
+  <div><div className="text-caption text-ink-muted">text-display-tablet</div><div className="text-display-tablet">I make complex things clear</div></div>
   <div><div className="text-caption text-ink-muted">text-heading</div><div className="text-heading">Liudmyla Khlystun</div></div>
   <div><div className="text-caption text-ink-muted">text-nav</div><div className="text-nav">About · Works · Contacts · EN / DE</div></div>
-  <div><div className="text-caption text-ink-muted">text-lead</div><div className="text-lead">UX/UI Designer та AI UX/UI Engineer з досвідом викладання.</div></div>
-  <div><div className="text-caption text-ink-muted">text-body</div><div className="text-body">20 років викладання → UX/UI → AI</div></div>
-  <div><div className="text-caption text-ink-muted">text-button</div><div className="text-button">Подивитись кейси</div></div>
-  <div><div className="text-caption text-ink-muted">text-caption</div><div className="text-caption text-ink-muted">Застосунок для вивчення мов · Серпень 2026</div></div>
+  <div><div className="text-caption text-ink-muted">text-lead</div><div className="text-lead">UX/UI Designer and AI UX/UI Engineer with a teaching background.</div></div>
+  <div><div className="text-caption text-ink-muted">text-body</div><div className="text-body">20 years of teaching → UX/UI → AI</div></div>
+  <div><div className="text-caption text-ink-muted">text-button</div><div className="text-button">View case studies</div></div>
+  <div><div className="text-caption text-ink-muted">text-caption</div><div className="text-caption text-ink-muted">Mobile app · GoIT course project · Aug–Sep 2026</div></div>
 </div>
 
 ## Радіуси

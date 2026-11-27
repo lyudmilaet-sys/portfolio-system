@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import coverFluentia from "@/assets/cover-fluentia.png";
 import coverHealthMate from "@/assets/cover-healthmate.png";
+import coverHotelNostalgia from "@/assets/cover-hotel-nostalgia.webp";
 import coverOldLion from "@/assets/cover-old-lion.png";
 import portrait from "@/assets/portrait.png";
 import { Button } from "@/components/Button/Button";
@@ -22,22 +23,28 @@ const languages = [
 ];
 
 // Order and texts: docs/plan.md, block 5. Case pages don't exist yet, so cards point to #cases.
-// Covers from the case files in Figma (src/assets/cover-*.png).
+// Covers from the case files in Figma (src/assets/cover-*.png); Hotel Nostalgia's from its Behance project.
 const cases: { title: string; description: string; image: StaticImageData }[] = [
   {
-    title: "Old Lion | Book Mobile App",
-    description: "Мобільний e-commerce застосунок · Видавництво Старого Лева · Жовтень – листопад 2026",
+    title: "Old Lion: One App for Every Book",
+    // Word joiners and no-break spaces (here and below) keep the period on one line when the text wraps.
+    description: "Mobile app · GoIT internship for Old Lion Publishing House · Oct⁠–⁠Nov 2026",
     image: coverOldLion,
   },
-  { title: "Fluentia", description: "Застосунок для вивчення мов · Серпень 2026", image: coverFluentia },
-  { title: "HealthMate", description: "Веб-сервіс для здоров’я · Липень 2026", image: coverHealthMate },
+  { title: "Fluentia: Learn by Live Practice", description: "Mobile app · GoIT course project · Aug⁠–⁠Sep 2026", image: coverFluentia },
+  { title: "HealthMate: Simple Health Tracking", description: "Web service · GoIT course project · Jun⁠–⁠Jul 2026", image: coverHealthMate },
+  {
+    title: "Hotel Nostalgia: A Clearer, Warmer Website",
+    description: "Website redesign · GoIT course project · May 2026",
+    image: coverHotelNostalgia,
+  },
 ];
 
-const path = ["20 років викладання", "UX/UI", "AI"];
+const path = ["20 years of teaching", "UX/UI", "AI"];
 
 export default function Home() {
   return (
-    <div id="top" className="bg-canvas px-4 font-sans text-ink md:px-8 xl:px-section-80">
+    <div id="top" className="bg-canvas px-4 font-sans text-ink lg:px-8 xl:px-section-80">
       <div className="mx-auto max-w-content">
         <header className="flex flex-wrap items-center justify-between gap-6 pt-6 xl:pt-section-40">
           <a
@@ -55,20 +62,20 @@ export default function Home() {
         <main className="flex flex-col gap-section-48 pt-8 pb-section-64 xl:pt-section-64 xl:pb-section-120">
           {/* Hero: text on the left, photo with the path caption on the right (photo first on narrow screens). */}
           <section aria-labelledby="hero-title" className="flex flex-col gap-8 lg:flex-row lg:gap-section-96">
-            <div className="flex flex-1 flex-col gap-8 lg:justify-between">
+            <div className="flex flex-1 flex-col gap-8 lg:justify-between lg:gap-section-48">
               <div className="flex flex-col gap-8">
                 <h1 id="hero-title" className="max-w-headline text-heading md:text-display-tablet xl:text-display">
-                  Роблю складне зрозумілим — через дизайн та AI.
+                  I make complex things <span className="text-accent">clear</span> through design and AI.
                 </h1>
                 <p className="max-w-lead text-body md:text-lead">
-                  UX/UI Designer та AI UX/UI Engineer з досвідом викладання, яка перетворює складну інформацію на
-                  інтуїтивні цифрові продукти — на перетині технологій, дизайну та AI.
+                  UX/UI Designer and AI UX/UI Engineer with a teaching background, turning complex information into
+                  intuitive digital products at the intersection of technology, design and AI.
                 </p>
               </div>
               <div className="flex flex-wrap items-start gap-6">
-                <Button href="#cases">Подивитись кейси</Button>
-                <Button variant="secondary" disabled disabledReason="CV з'явиться найближчим часом">
-                  Завантажити CV
+                <Button href="#cases">View case studies</Button>
+                <Button variant="secondary" disabled disabledReason="CV coming soon">
+                  Download CV
                 </Button>
               </div>
             </div>
@@ -92,7 +99,7 @@ export default function Home() {
                         <span aria-hidden="true" className="text-accent">
                           →
                         </span>
-                        <span className="sr-only">, далі </span>
+                        <span className="sr-only">, then </span>
                       </>
                     )}
                     <span>{step}</span>
@@ -105,9 +112,9 @@ export default function Home() {
           {/* Selected works: right under the hero, titles visible without scrolling on 1440×900. */}
           <section id="cases" aria-labelledby="cases-title">
             <h2 id="cases-title" className="sr-only">
-              Вибрані роботи
+              Selected works
             </h2>
-            <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
               {cases.map((item) => (
                 <li key={item.title}>
                   <WorkCard
@@ -115,7 +122,7 @@ export default function Home() {
                     description={item.description}
                     href="#cases"
                     image={item.image}
-                    sizes="(min-width: 1024px) 405px, (min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 296px, (min-width: 768px) 50vw, 100vw"
                   />
                 </li>
               ))}

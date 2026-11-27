@@ -19,7 +19,7 @@
   --color-canvas: #f6f1ec; /* page background; sheet in the pocket; text on accent */
   --color-surface: #e8dcd2; /* pocket front, photo backdrop, hover of outline button */
   --color-line: #d9c6b8; /* decoration only: dividers, card borders, pocket back */
-  --color-accent: #7a5543; /* primary button, links, arrows */
+  --color-accent: #7a5543; /* primary button, links, arrows, one highlighted word in the hero headline */
   --color-ink: #2b211c; /* main text */
   --color-ink-muted: #6b5a50; /* secondary text; border of outline buttons and fields */
   --color-danger: #a8174b; /* form errors: text and field border */

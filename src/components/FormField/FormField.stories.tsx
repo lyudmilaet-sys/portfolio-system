@@ -35,7 +35,7 @@ const description = `
 ### Коли використовувати
 - Однорядкове введення тексту: ім'я, email, телефон, тема.
 - Завжди з підписом. Підказка в полі — лише приклад формату.
-- Помилку показуйте після спроби відправити форму або коли людина вийшла з поля, і пишіть, як виправити: «Введіть email у форматі name@example.com».
+- Помилку показуйте після спроби відправити форму або коли людина вийшла з поля, і пишіть, як виправити: «Enter an email like name@example.com».
 
 ### Коли не використовувати
 - Для довгого тексту повідомлення: потрібне багаторядкове поле (\`textarea\`), його поки немає.
@@ -46,14 +46,14 @@ const description = `
 \`\`\`tsx
 import { FormField } from "@/components/FormField/FormField";
 
-<FormField label="Ім'я" name="name" autoComplete="name" />
+<FormField label="Name" name="name" autoComplete="name" />
 <FormField
   label="Email"
   name="email"
   type="email"
   placeholder="name@example.com"
   error={emailInvalid}
-  errorMessage="Введіть email у форматі name@example.com"
+  errorMessage="Enter an email like name@example.com"
 />
 \`\`\`
 `;
@@ -78,7 +78,7 @@ const meta = {
     defaultValue: "",
     placeholder: "name@example.com",
     error: false,
-    errorMessage: "Введіть email у форматі name@example.com",
+    errorMessage: "Enter an email like name@example.com",
     disabled: false,
   },
   // key makes the field re-render when the value changes in Controls.
